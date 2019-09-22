@@ -1,4 +1,10 @@
 h1 Users
+label(for="input") Mời nhập
+form(action="/users/search", method="GET")
+    input(type="text", name="q", id="input" placeholder="Seach ..." )
+    button Search
+
 ul 
     each user in users
         li= user.name
+        //li= user.name + " " + user.age + " tuoi"
