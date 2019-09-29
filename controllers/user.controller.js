@@ -13,7 +13,10 @@ module.exports.search = (req, res) => {
     });
 };
 
-module.exports.create = (req, res) => res.render('users/create');
+module.exports.create = (req, res) => {
+    console.log(req.cookies);
+    res.render('users/create')
+};
 
 module.exports.get = (req, res) => {
     let id = req.params.id;
