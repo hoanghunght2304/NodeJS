@@ -2,7 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-const userRouter = require('./routes/user.route');
+const userRoute = require('./routes/user.route');
+const authRoute = require('./routes/auth.route');
+
+const authMiddleware = require('./middlewares/auth.middleware');
 
 const port = 3000;
 
@@ -18,6 +21,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => res.render('index', {name: 'AAA'}));
 
-app.use('/users', userRouter);
+app.use('/users', authMiddleware.requireAuth, userRoute);
+app.use('/auth', authRoute);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

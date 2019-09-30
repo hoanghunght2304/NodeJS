@@ -2,7 +2,9 @@
   "users": [
     {
       "name": "Hung",
-      "id": "8CYYh30j"
+      "id": "8CYYh30j",
+      "email": "hungottaoa@gmail.com",
+      "password": "123456"
     },
     {
       "name": "Huong",
